@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Shi Ya's Portfolio 2022</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+
+    <style>
+        html,
+        body {
+            width: 100%;
+            height: 100vh;
+            font-family: 'Comfortaa', cursive;
+            background-image: url("images/BG.png");
+            background-repeat: repeat;
+            /* background-size: contain; */
+            /* background-color: red; */
+        }
+
+        /* body{
+        margin: 0;
+        padding: 0;
+        padding-left: 3vw;
+    } */
+
+        * {
+            padding: 0;
+            margin: 0;
+            position: relative;
+            /* box-sizing: border-box; */
+        }
+
+        h1 {
+            font-size: 4em;
+        }
+
+        h2 {
+            font-size: 2em;
+        }
+
+        p {
+            font-size: 0.8em;
+        }
+
+        @media only screen and (min-width: 600px) {
+            /* For tablets: */
+        }
+
+        @media only screen and (min-width: 768px) {
+            /* For desktop: */
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            width: 100vh;
+            /* height:5%; */
+            position: fixed;
+            /* background:#4c4c4c21; */
+            transform-origin: 0 0;
+            transform: rotate(-90deg) translateX(-100%);
+            background-color: #f5f6fa;
+            align-items: center;
+        }
+
+        nav ul {
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        nav ul li {
+            padding: 10px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        nav ul li a {
+            height: 10px;
+            text-decoration: none;
+            transition: all 0.3s ease-out;
+            fill: #e0e0e0;
+        }
+
+        nav ul li a.home:hover,
+        nav ul li a.home:active,
+        a.home.active,
+        nav ul li a.portfolio:hover,
+        nav ul li a.portfolio:active,
+        a.portfolio.active {
+            text-decoration: none;
+            fill: rgb(255, 0, 0);
+        }
+
+        nav ul li a.info:hover,
+        nav ul li a.info:active,
+        a.info.active {
+            text-decoration: none;
+            fill: rgb(0, 0, 255);
+        }
+
+        nav ul li a.skill:hover,
+        nav ul li a.skill:active,
+        a.skill.active {
+            text-decoration: none;
+            fill: rgb(0, 255, 0);
+        }
+
+        .svg-group svg {
+            width: 10px;
+        }
+
+        /* nav ul li a svg circle{
+        fill:rgb(36, 36, 255);
+    } */
+
+        section {
+            margin-left: 38.4px;
+            width: 100vw - 5%;
+        }
+
+        .container {
+            display: flex;
+            width: 100%;
+            height: 100%;
+        }
+
+        .home-svg .tri-top {
+            animation: tri-one 2s forwards;
+        }
+
+        .home-svg .tri-bot {
+            overflow: hidden;
+            animation: tri-two 3s forwards;
+        }
+
+        @keyframes tri-one {
+            from {
+                transform: translateX(-900px);
+                transform: translateY(-900px);
+            }
+
+            to {
+                transform: translateX(0);
+                transform: translateY(0);
+            }
+
+            ;
+        }
+
+        @keyframes tri-two {
+            from {
+                transform: translateX(900px);
+                transform: translateY(900px);
+            }
+
+            to {
+                transform: translateX(0);
+                transform: translateY(0);
+            }
+
+            ;
+        }
+
+        .socialmediabtn {
+            justify-content: center;
+            width: calc(100% / 4 - 450px);
+            display: inline-block;
+            padding: 35px;
+        }
+
+        .portfoliobtn {
+            /* width: calc(100% / 2 - 300px); */
+            width: 100%;
+            padding: 30px 0;
+        }
+
+        .wave-btn {
+            color: #fff;
+            text-decoration: none;
+            padding: 0.5% 24%;
+            font-size: 22px;
+            line-height: 52px;
+            border-radius: 180px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            overflow: hidden;
+            transition: all 1s;
+        }
+
+        .xxwave-btn {
+            color: #fff;
+            text-decoration: none;
+            padding: 1.2% 8%;
+            font-size: 14px;
+            line-height: 30px;
+            border-radius: 180px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            overflow: hidden;
+            transition: all 1s;
+        }
+
+        /* .wave-btn:before {
+        content: "";
+        position: absolute;
+        width: 320px;
+        height: 320px;
+        border-radius: 130px;
+        background-color: #0097e6; 
+        background-image: radial-gradient(#00bcd4, #0097e6); 
+        top: 20px;
+        left: 50%;
+        transform: translate(-50%);
+        animation: wave 5s infinite linear;
+        transition: all 1s;
+    }  */
+        .socialmediabtn1 .wave-btn:before {
+            background-image: radial-gradient(#11061a, #700cc2);
+            content: "";
+            position: absolute;
+            width: 80px;
+            height: 100px;
+            border-radius: 130px;
+            /* background-color: #0097e6; */
+            /* background-image: radial-gradient(#00bcd4, #0097e6); */
+            top: 20px;
+            left: 50%;
+            transform: translate(-50%);
+            animation: wave 3s infinite linear;
+            transition: all 1s;
+            overflow: hidden;
+        }
+
+        .socialmediabtn2 .wave-btn:before {
+            background-image: radial-gradient(#38accf, #61ffdd);
+            content: "";
+            position: absolute;
+            width: 80px;
+            height: 100px;
+            border-radius: 130px;
+            /* background-color: #0097e6; */
+            /* background-image: radial-gradient(#00bcd4, #0097e6); */
+            top: 20px;
+            left: 50%;
+            transform: translate(-50%);
+            animation: wave 3.4s infinite linear;
+            transition: all 1s;
+            overflow: hidden;
+        }
+
+        .socialmediabtn3 .wave-btn:before {
+            background-image: radial-gradient(#0270ad, #ff2d2d);
+            content: "";
+            position: absolute;
+            width: 80px;
+            height: 100px;
+            border-radius: 130px;
+            /* background-color: #0097e6; */
+            /* background-image: radial-gradient(#00bcd4, #0097e6); */
+            top: 20px;
+            left: 50%;
+            transform: translate(-50%);
+            animation: wave 3.8s infinite linear;
+            transition: all 1s;
+            overflow: hidden;
+        }
+
+        .socialmediabtn4 .wave-btn:before {
+            background-image: radial-gradient(#ff0000, #dfff2d);
+            content: "";
+            position: absolute;
+            width: 80px;
+            height: 100px;
+            border-radius: 130px;
+            /* background-color: #0097e6; */
+            /* background-image: radial-gradient(#00bcd4, #0097e6); */
+            top: 20px;
+            left: 50%;
+            transform: translate(-50%);
+            animation: wave 4.2s infinite linear;
+            transition: all 1s;
+            overflow: hidden;
+        }
+
+        .portfoliobtn1 .xxwave-btn,
+        .portfoliobtn2 .xxwave-btn {
+            background-color: #30c1f7;
+            transition: background-color 300ms ease-in;
+            box-shadow: 2px 2px 5px #11061a46;
+        }
+
+        .wave-btn:hover:before {
+            top: 10px;
+            width: 360px;
+            height: 360px;
+        }
+
+        .xxwave-btn:hover {
+            background-color: #0144f5;
+        }
+
+        @keyframes wave {
+            0% {
+                transform: translate(-50%) rotate(-180deg);
+            }
+
+            100% {
+                transform: translate(-50%) rotate(360deg);
+            }
+        }
+
+        .infos,
+        .more-info {
+            /* height:100%;
+        min-width: 100%; */
+            text-align: center;
+            color: #ffffff;
+        }
+
+        /* The actual timeline (the vertical ruler) */
+        .timeline {
+            position: relative;
+            /* width: 800px; */
+            height: 4px;
+            margin: 15% auto;
+            background-color: white;
+        }
+
+        /* The actual timeline (the vertical ruler) */
+        .timeline::after {
+            content: '';
+            display: inline-block;
+            width: 100%;
+        }
+
+        /* Container around content */
+        .timeline-pt {
+            display: inline-block;
+            padding: 0.3% 0.4%;
+            position: relative;
+            background-color: none;
+            max-width: 20%;
+        }
+
+        /* The circles on the timeline */
+        .timeline-pt:after {
+            content: '';
+            display: inline-block;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 25px;
+            height: 25px;
+            background-color: rgb(70, 102, 146);
+            border: 4px solid #ffffff;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        .left {
+            top: -112px;
+        }
+
+        .left .content,
+        .left .year {
+            top: 0.3%;
+        }
+
+
+        /* Place the container to the right */
+        .right {
+            top: 50%;
+        }
+
+        .right::after {
+            top: -36px;
+        }
+
+        .content {
+            /* transform:rotate(90deg) translateX(-100%); */
+            padding: 20px 10px;
+            /* background-color: rgba(255, 255, 255, 0.5); */
+            position: relative;
+            border-radius: 6px;
+        }
+
+        .content p {
+            color: #ffffff;
+            font-size: calc(4px + 0.8vw);
+        }
+
+        .year {
+            color: #ffffff;
+        }
+
+        /* .left .year {
+    left: 70px;
+}
+.right .year {
+    left: -70px;
+    top: 70px;
+} */
+
+        #carousel {
+            background: none;
+            border: 0px solid #c058dc;
+            border-radius: 5px;
+            width: 100%;
+            height: 50vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #slider {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            height: 100%;
+            width: 100%;
+            transition: all 0.5s;
+            position: relative;
+            overflow: hidden;
+            padding: 0 2vw;
+        }
+
+        .slides {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 50px;
+            width: 15%;
+            height: 100%;
+            font-size: 20px;
+            /* overflow: hidden; */
+        }
+
+        .controls a.next {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            outline: none;
+            color: #c058dc;
+        }
+
+        .controls a.prev {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            outline: none;
+            color: #c058dc;
+        }
+
+        .controls a {
+            font-size: 50px;
+        }
+
+        .slides img {
+            width: 10vw;
+        }
+
+        .currentslide img {
+            width: 15vw;
+            animation: current-img 0.8s ease-in-out;
+        }
+
+        @keyframes current-img {
+            from {
+                width: 10vw;
+            }
+
+            to {
+                width: 15vw;
+            }
+
+            ;   
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul class="svg-group" style="display: block; width: 100%; height: 100%;">
+            <li><a href="#portfolio" class="portfolio">
+                    <svg viewBox="0 0 10 10" preserveAspectRatio="none">
+                        <circle cx="5" cy="5" r="5"></circle>
+                    </svg>
+                </a></li>
+
+            <li><a href="#skill" class="skill">
+                    <svg viewBox="0 0 10 10" preserveAspectRatio="none">
+                        <circle cx="5" cy="5" r="5"></circle>
+                    </svg>
+                </a></li>
+
+            <li><a href="#info" class="info">
+                    <svg viewBox="0 0 10 10" preserveAspectRatio="none">
+                        <circle cx="5" cy="5" r="5"></circle>
+                    </svg>
+                </a></li>
+
+            <li><a href="#home" class="home active">
+                    <svg viewBox="0 0 10 10" preserveAspectRatio="none">
+                        <circle cx="5" cy="5" r="5"></circle>
+                    </svg>
+                </a></li>
+        </ul>
+    </nav>
+
+    <section id="home">
+        <div class="container"
+            style="height: 100vh; background-color: rgba(255, 255, 255, 0); position: relative; z-index: 2;">
+            <div class="home-svg" style="width: 100%; position: absolute">
+                <svg height="650" width="330" style="position: absolute; z-index: -2; overflow:hidden;" class="tri-top">
+                    <polygon points="0,0 0,650 330,0" style="fill:rgba(255, 0, 0, 0.800);" />
+                </svg>
+                <svg height="100vh" width="330" style="position: absolute; z-index: -1; overflow:hidden;"
+                    class="tri-bot">
+                    <polygon points="0,1500 0,190 330,1500" style="fill:rgba(0, 255, 0, 0.800);" />
+                </svg>
+            </div>
+            <div class="home-left" style="float: left; text-align: left; width:50%; padding: 5vh 5vw;">
+                <div class="hometext" style="width:100%; height: 100vh; display:table-cell; vertical-align: middle;">
+                    <h2>Welcome to my Portfolio</h2>
+                    <h3 style="display:inline">I am <h1 style="display:inline">Ong Shi Ya</h1>
+                    </h3>
+                </div>
+            </div>
+            <div class="home-right" style="float: right; width:50%; padding: 5vh 3vw;">
+                <div class="card"
+                    style="float: right; padding: 20px 0; width: 85%; min-width: 100px; height: 85%; background-color: #f5f6fa; border-radius: 60px; box-shadow: 1px 5px 8px 2px rgba(0, 0, 0, 0.11);">
+                    <div class="homeimg" style="width: 100%; text-align: center;">
+                        <img src="images/AvatarwCircle.png" style="width: 60%;">
+                    </div>
+                    <div class="socialmediabtns" style="width: 100%; text-align: center;">
+                        <div class="socialmediabtn socialmediabtn1">
+                            <a href="https://github.com/osshiya" class="wave-btn"><i
+                                    class="fa-brands fa-github"></i></a>
+                        </div>
+                        <div class="socialmediabtn socialmediabtn2">
+                            <a href="https://osshiya.artstation.com/" class="wave-btn"><i
+                                    class="fa-brands fa-artstation"></i></a>
+                        </div>
+                        <div class="socialmediabtn socialmediabtn3">
+                            <a href="https://www.linkedin.com/in/osshiya/" class="wave-btn"><i
+                                    class="fa-brands fa-linkedin"></i></a>
+                        </div>
+                        <div class="socialmediabtn socialmediabtn4">
+                            <a href="mailto: osshiya@gmail.com" class="wave-btn"><i class="fa-solid fa-at"></i></a>
+                        </div>
+                    </div>
+                    <div class="portfoliobtns" style="width: 100%; padding: 30px 0; text-align: center;">
+                        <h6>Past Portfolios</h5>
+                            <div class="portfoliobtn portfoliobtn1">
+                                <a href="https://osshiya.wixsite.com/portfolio" class="xxwave-btn"><span>2020</span></a>
+                            </div>
+                            <div class="portfoliobtn portfoliobtn2">
+                                <a href="https://osshiya.wixsite.com/syportfolio"
+                                    class="xxwave-btn"><span>2021</span></a>
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section id="info">
+        <div class="container"
+            style="display: block; min-height: 100vh; background-color: rgb(70, 102, 146); position: relative; z-index: 3;">
+            <div class="more-info" style="padding: 10vh 0; width: 100%; text-align: center; line-height: 30px;">
+                <p>I am a Immersive Media Student from Ngee Ann Polytechnic.</p>
+                <p>I aspires to be a Full Stack Developer.</p>
+                <p>Here are my experiences.</p>
+            </div>
+            <div class="container infos" style="flex-direction: column; flex-wrap: nowrap;">
+                <h2 style="display: inline-block; width: 100%; text-align: center; margin-bottom: calc(80px + 1vh);">
+                    HISTORY</h2>
+                <div class="timeline">
+                    <div class="timeline-pt left">
+                        <div class="content">
+                            <p>Ngee Ann Polytechnic</p>
+                        </div>
+                        <h4 class="year" style="text-align: center;">2017</h4>
+                    </div>
+                    <div class="timeline-pt right">
+                        <h4 class="year" style="text-align: center;">2016</h4>
+                        <div class="content">
+                            <p>Ngee Ann Polytechnic</p>
+                        </div>
+                    </div>
+                    <div class="timeline-pt left">
+                        <div class="content">
+                            <p>Boon Lay Secondary</p>
+                        </div>
+                        <h4 class="year" style="text-align: center;">2015</h4>
+                    </div>
+                    <div class="timeline-pt right">
+                        <h4 class="year" style="text-align: center;">2012</h4>
+                        <div class="content">
+                            <p>Pioneer Primary School</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skill">
+        <div class="container"
+            style="height: 100vh; background-color: rgb(255, 127, 127); position: relative; z-index: 3; flex-direction: column;">
+            <div class="more-info" style="padding: 10vh 0; width: 100%; text-align: center; line-height: 30px;">
+                <h2>SKILLS</h2>
+            </div>
+            <div class="skills" style="width: 100%; height: 100vh;">
+                <div class="skills-l" style="width: 70%;">
+                    <svg height="18vh" width="100%" viewBox="0 0 800 100">
+                        <polygon points="0,25 500,10 510,50 0,70"
+                            style="fill:rgba(253, 253, 253, 0.8); filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, 0.6));" />
+                        <text x="650" y="40" text-anchor="end" fill="black" font-size="16">Programming</text>
+                    </svg>
+                    <svg height="18vh" width="100%" viewBox="0 0 800 100">
+                        <polygon points="0,25 500,10 510,50 0,70"
+                            style="fill:rgba(253, 253, 253, 0.8); filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, 0.6));" />
+                        <text x="650" y="40" text-anchor="end" fill="black" font-size="16">Web Design</text>
+                    </svg>
+                    <svg height="18vh" width="100%" viewBox="0 0 800 100">
+                        <polygon points="0,25 500,10 510,50 0,70"
+                            style="fill:rgba(253, 253, 253, 0.8); filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, 0.6));" />
+                        <text x="650" y="40" text-anchor="end" fill="black" font-size="16">UI/UX Design</text>
+                    </svg>
+                    <svg height="18vh" width="100%" viewBox="0 0 800 100">
+                        <polygon points="0,25 500,10 510,50 0,70"
+                            style="fill:rgba(253, 253, 253, 0.8); filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, 0.6));" />
+                        <text x="650" y="40" text-anchor="end" fill="black" font-size="16">Graphic Design</text>
+                    </svg>
+                </div>
+                <div class="skills-r" style="width: 30%;">
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <div class="container"
+            style="height: 100vh; background-color: rgb(255, 195, 127); position: relative; z-index: 3; flex-direction: column;">
+            <div class="more-info" style="padding: 10vh 0; width: 100%; text-align: center; line-height: 30px;">
+                <h2>PORTFOLIO</h2>
+            </div>
+            <div id="carousel">
+                <div class="displaystxt" style="width: 100%; height: 100%; display:flex; flex-direction: row; position: absolute; overflow: hidden;">
+                    <div style="width: 28%; height: 100%;"></div>
+                    <div style="width: 72%; height: 100%; padding: 2vh 0;">
+                        <h2 id="displaystitle" style="text-align: left;">Internship Poster</h2>
+                        <p id="displaysdesc" style="text-align: left;">A poster made during Internship</p>
+                     </div>
+                </div>
+                <div id="slider">
+                    <div class="slides slide-1 currentslide" data-slide-title="Internship Poster" data-slide-desc="A poster made during Internship"><img src="images/export_d.png"></div>
+                    <div class="slides slide-2" data-slide-title="Internship Logo" data-slide-desc="Thumbnail for the Internship Poster"><img src="images/small_logo.png"></div>
+                    <div class="slides slide-3" data-slide-title="Internship 1" data-slide-desc="A poster 1 made during Internship">Content section 3</div>
+                    <div class="slides slide-4" data-slide-title="Internship 2" data-slide-desc="A poster 2 made during Internship">Content section 4</div>
+                    <div class="slides slide-5" data-slide-title="Internship 3" data-slide-desc="A poster 3 made during Internship">Content section 5</div>
+                    <div class="slides slide-6" data-slide-title="Internship 4" data-slide-desc="A poster 4 made during Internship">Content section 6</div>
+                    <div class="slides slide-7" data-slide-title="Internship 5" data-slide-desc="A poster 5 made during Internship">Content section 7</div>
+                </div>
+
+            </div>
+            <div class="controls">
+                <a class="prev" onclick="minusSlides(-1)">❮</a>
+                <a class="next" onclick="plusSlides(1)">❯</a>
+            </div>
+        </div>
+        </div>
+        </div>
+    </section>
+
+    </div>
+</body>
+
+<script>
+    // nav and sections
+    const sections = document.querySelectorAll("section");
+    const navlists = document.querySelectorAll("nav ul li a");
+
+    window.onscroll = () => {
+        var current = "";
+
+        sections.forEach((section) => {
+            const sectionTop = section.offsetTop;
+            if (pageYOffset >= sectionTop - 120) {
+                current = section.getAttribute("id");
+            }
+        });
+
+        navlists.forEach((a) => {
+            a.classList.remove("active");
+            if (a.classList.contains(current)) {
+                a.classList.add("active");
+            }
+        });
+    };
+
+    //carousel
+    // const carousel = document.querySelector('#carousel');
+    // const slider = document.querySelector('#slider');
+
+    // const next = document.querySelector('.next');
+    // const prev = document.querySelector('.prev');
+    // let direction;
+
+    // next.addEventListener('click', function() {
+    //   direction = 1;
+    //   carousel.style.justifyContent = 'flex-start';
+    //   slider.style.transform = 'translate(-20%)';  
+    // });
+
+    // prev.addEventListener('click', function() {
+    //   if (direction === 1) {
+    //     direction = -1;
+    //     slider.appendChild(slider.firstElementChild);
+    //   }
+    //   carousel.style.justifyContent = 'flex-end';    
+    //   slider.style.transform = 'translate(20%)';  
+
+    // });
+
+    // slider.addEventListener('transitionend', function() {
+    //   // get the last element and append it to the front
+
+    //   if (direction === -1) {
+    //     slider.prepend(slider.lastElementChild);
+    //     console.log('preee');
+    //   } else if(direction === 1) {
+    //     slider.appendChild(slider.firstElementChild);
+    //     slider.appendChild(slider.nth-child(2));
+    //     console.log('nexttt');
+    //   }
+
+    //   slider.style.transition = 'none';
+    //   slider.style.transform = 'translate(0)';
+    //   setTimeout(() => {
+    //     slider.style.transition = 'all 0.5s';
+    //   })
+    // }, false);
+    var slideIndex = 1;
+    var slides = document.getElementsByClassName("slides");
+    // showSlides(slideIndex);
+
+    // Next/previous controls
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+        slider.appendChild(slider.firstElementChild);
+        slides[0].className += " currentslide";
+        var getTitle = slides[0].getAttribute("data-slide-title");
+        var getDesc = slides[0].getAttribute("data-slide-desc");
+        $("#displaystitle").text(getTitle);
+        $("#displaysdesc").text(getDesc);
+    }
+    function minusSlides(n) {
+        showSlides(slideIndex += n);
+        slider.prepend(slider.lastElementChild);
+        slides[0].className += " currentslide";
+        var getTitle = slides[0].getAttribute("data-slide-title");
+        var getDesc = slides[0].getAttribute("data-slide-desc");
+        $("#displaystitle").text(getTitle);
+        $("#displaysdesc").text(getDesc);
+    }
+    // Thumbnail image controls
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+        var getTitle = slides[0].getAttribute("data-slide-title");
+        var getDesc = slides[0].getAttribute("data-slide-desc");
+        $("#displaystitle").text(getTitle);
+        $("#displaysdesc").text(getDesc);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("slides");
+        if (n > slides.length) {
+            slideIndex = 1
+        }
+        if (n < 1) {
+            slideIndex = slides.length
+        }
+        for (i = 0; i < slides.length; i++) {
+            // slides[i].style.display = "none";
+            slides[i].className = slides[i].className.replace(" currentslide", "");
+        }
+        //   slides[slideIndex-1].style.display = "block";
+        console.log(slideIndex)
+    }
+
+
+
+
+    //animation
+    // ScrollReveal().reveal('.intro', { delay: 0});
+    ScrollReveal().reveal('#home h1');
+    ScrollReveal().reveal('#info h1', { delay: 500 });
+// ScrollReveal().reveal('.punchline', { delay: 2000 });
+
+</script>
+
+</html>
