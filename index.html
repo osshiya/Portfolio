@@ -26,7 +26,8 @@
             font-family: 'Comfortaa', cursive;
             background-image: url("images/BG.png");
             background-repeat: repeat;
-            /* background-size: contain; */
+            /* background-size: cover; */
+            background-attachment: fixed;
             /* background-color: red; */
         }
 
@@ -358,7 +359,7 @@
             padding: 0.3% 0.4%;
             position: relative;
             background-color: none;
-            max-width: 20%;
+            max-width: 15%;
         }
 
         /* The circles on the timeline */
@@ -377,7 +378,7 @@
         }
 
         .left {
-            top: -112px;
+            top: -143px;
         }
 
         .left .content,
@@ -392,7 +393,7 @@
         }
 
         .right::after {
-            top: -36px;
+            top: -40px;
         }
 
         .content {
@@ -461,7 +462,7 @@
             border: none;
             cursor: pointer;
             outline: none;
-            color: #c058dc;
+            color: #dc9858;
         }
 
         .controls a.prev {
@@ -472,11 +473,14 @@
             border: none;
             cursor: pointer;
             outline: none;
-            color: #c058dc;
+            color: #dc9858;
         }
 
         .controls a {
             font-size: 50px;
+        }
+        .controls a:hover {
+            color: #ad6f36;
         }
 
         .slides img {
@@ -531,7 +535,7 @@
         </ul>
     </nav>
 
-    <section id="home">
+    <section id="home parallax">
         <div class="container"
             style="height: 100vh; background-color: rgba(255, 255, 255, 0); position: relative; z-index: 2;">
             <div class="home-svg" style="width: 100%; position: absolute">
@@ -546,7 +550,7 @@
             <div class="home-left" style="float: left; text-align: left; width:50%; padding: 5vh 5vw;">
                 <div class="hometext" style="width:100%; height: 100vh; display:table-cell; vertical-align: middle;">
                     <h2>Welcome to my Portfolio</h2>
-                    <h3 style="display:inline">I am <h1 style="display:inline">Ong Shi Ya</h1>
+                    <h3 style="display:inline; color: #f3b461;">I am <h1 style="display:inline">Ong Shi Ya</h1>
                     </h3>
                 </div>
             </div>
@@ -603,26 +607,44 @@
                 <div class="timeline">
                     <div class="timeline-pt left">
                         <div class="content">
-                            <p>Ngee Ann Polytechnic</p>
+                            <p>AIDC Technology(s) Pte. Ltd.</p>
+                            <h6>Immersive Media Intern</h6>
                         </div>
-                        <h4 class="year" style="text-align: center;">2017</h4>
+                        <h4 class="year" style="text-align: center;">2021</h4>
                     </div>
                     <div class="timeline-pt right">
-                        <h4 class="year" style="text-align: center;">2016</h4>
+                        <h4 class="year" style="text-align: center;">2019</h4>
                         <div class="content">
                             <p>Ngee Ann Polytechnic</p>
+                            <h6>Diploma in Immersive Media & Game Design</h6>
                         </div>
                     </div>
                     <div class="timeline-pt left">
                         <div class="content">
-                            <p>Boon Lay Secondary</p>
+                            <p>Mr Bean</p>
+                            <h6>PT Crew</h6>
                         </div>
-                        <h4 class="year" style="text-align: center;">2015</h4>
+                        <h4 class="year" style="text-align: center;">2019</h4>
+                    </div>
+                    <div class="timeline-pt left">
+                        <div class="content">
+                            <p>Monster Curry</p>
+                            <h6>FT/PT Service Crew</h6>
+                        </div>
+                        <h4 class="year" style="text-align: center;">2018</h4>
+                    </div>
+                    <div class="timeline-pt left">
+                        <div class="content">
+                            <p>Bee Cheng Hiang</p>
+                            <h6>Kitchen Assistant</h6>
+                        </div>
+                        <h4 class="year" style="text-align: center;">2018</h4>
                     </div>
                     <div class="timeline-pt right">
-                        <h4 class="year" style="text-align: center;">2012</h4>
+                        <h4 class="year" style="text-align: center;">2014</h4>
                         <div class="content">
-                            <p>Pioneer Primary School</p>
+                            <p>Boon Lay Secondary</p>
+                            <h6>Express Stream<br>CO SYF 2017</h6>
                         </div>
                     </div>
                 </div>
@@ -641,22 +663,22 @@
                     <svg height="18vh" width="100%" viewBox="0 0 800 100">
                         <polygon points="0,25 500,10 510,50 0,70"
                             style="fill:rgba(253, 253, 253, 0.8); filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, 0.6));" />
-                        <text x="650" y="40" text-anchor="end" fill="black" font-size="16">Programming</text>
+                        <text x="680" y="40" text-anchor="end" fill="black" font-size="3vh">Programming</text>
                     </svg>
                     <svg height="18vh" width="100%" viewBox="0 0 800 100">
-                        <polygon points="0,25 500,10 510,50 0,70"
+                        <polygon points="0,25 400,10 410,50 0,70"
                             style="fill:rgba(253, 253, 253, 0.8); filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, 0.6));" />
-                        <text x="650" y="40" text-anchor="end" fill="black" font-size="16">Web Design</text>
+                        <text x="580" y="40" text-anchor="end" fill="black" font-size="3vh">Web Design</text>
                     </svg>
                     <svg height="18vh" width="100%" viewBox="0 0 800 100">
-                        <polygon points="0,25 500,10 510,50 0,70"
+                        <polygon points="0,25 350,10 360,50 0,70"
                             style="fill:rgba(253, 253, 253, 0.8); filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, 0.6));" />
-                        <text x="650" y="40" text-anchor="end" fill="black" font-size="16">UI/UX Design</text>
+                        <text x="530" y="40" text-anchor="end" fill="black" font-size="3vh">UI/UX Design</text>
                     </svg>
                     <svg height="18vh" width="100%" viewBox="0 0 800 100">
-                        <polygon points="0,25 500,10 510,50 0,70"
+                        <polygon points="0,25 300,10 310,50 0,70"
                             style="fill:rgba(253, 253, 253, 0.8); filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, 0.6));" />
-                        <text x="650" y="40" text-anchor="end" fill="black" font-size="16">Graphic Design</text>
+                        <text x="500" y="40" text-anchor="end" fill="black" font-size="3vh">Graphic Design</text>
                     </svg>
                 </div>
                 <div class="skills-r" style="width: 30%;">
@@ -676,18 +698,18 @@
                 <div class="displaystxt" style="width: 100%; height: 100%; display:flex; flex-direction: row; position: absolute; overflow: hidden;">
                     <div style="width: 28%; height: 100%;"></div>
                     <div style="width: 72%; height: 100%; padding: 2vh 0;">
-                        <h2 id="displaystitle" style="text-align: left;">Internship Poster</h2>
-                        <p id="displaysdesc" style="text-align: left;">A poster made during Internship</p>
+                        <h2 id="displaystitle" style="text-align: left;">Internship</h2>
+                        <p id="displaysdesc" style="text-align: left;">Internship at AIDC Technology(s) Pte. Ltd.</p>
                      </div>
                 </div>
                 <div id="slider">
-                    <div class="slides slide-1 currentslide" data-slide-title="Internship Poster" data-slide-desc="A poster made during Internship"><img src="images/export_d.png"></div>
-                    <div class="slides slide-2" data-slide-title="Internship Logo" data-slide-desc="Thumbnail for the Internship Poster"><img src="images/small_logo.png"></div>
-                    <div class="slides slide-3" data-slide-title="Internship 1" data-slide-desc="A poster 1 made during Internship">Content section 3</div>
-                    <div class="slides slide-4" data-slide-title="Internship 2" data-slide-desc="A poster 2 made during Internship">Content section 4</div>
-                    <div class="slides slide-5" data-slide-title="Internship 3" data-slide-desc="A poster 3 made during Internship">Content section 5</div>
-                    <div class="slides slide-6" data-slide-title="Internship 4" data-slide-desc="A poster 4 made during Internship">Content section 6</div>
-                    <div class="slides slide-7" data-slide-title="Internship 5" data-slide-desc="A poster 5 made during Internship">Content section 7</div>
+                    <div class="slides slide-1 currentslide" data-slide-title="Internship" data-slide-desc="Internship at AIDC Technology(s) Pte. Ltd."><img src="images/portfolio/small_logo.png"></div>
+                    <div class="slides slide-2" data-slide-title="POP!" data-slide-desc="New age Social Media Mobile Application"><img src="images/portfolio/App Logo.png"></div>
+                    <div class="slides slide-3" data-slide-title="Park-A-Lot" data-slide-desc="Mobile application for car tracking in carparks"><img src="images/portfolio/logos.png"></div>
+                    <div class="slides slide-4" data-slide-title="CheckToday" data-slide-desc="CheckToday is an AR mobile application that can be used during the Coronavirus period"><img src="images/portfolio/applogo-02 copy 2.png"></div>
+                    <div class="slides slide-5" data-slide-title="Momentum" data-slide-desc="Mobile application that can be used to log daily moments"><img src="images/portfolio/Momentum Logo.png"></div>
+                    <div class="slides slide-6" data-slide-title="Singapore's Culture of Queuing" data-slide-desc="This is an Infographic Website based on Singapore's Culture of Queuing"><img src="images/portfolio/SCQLogo.png"></div>
+                    <div class="slides slide-7" data-slide-title="Destination" data-slide-desc="Destination is a website where users can use to navigate around Singapore"><img src="images/portfolio/destination-app-logo.png"></div>
                 </div>
 
             </div>
@@ -707,8 +729,11 @@
     // nav and sections
     const sections = document.querySelectorAll("section");
     const navlists = document.querySelectorAll("nav ul li a");
+    const parallax = document.getElementById("parallax");
 
     window.onscroll = () => {
+        parallax.style.backgroundPositionY = pageYOffset = pageYOffset * 1 + "px";
+
         var current = "";
 
         sections.forEach((section) => {
@@ -824,6 +849,10 @@
     // ScrollReveal().reveal('.intro', { delay: 0});
     ScrollReveal().reveal('#home h1');
     ScrollReveal().reveal('#info h1', { delay: 500 });
+
+    ScrollReveal().reveal('.timeline');
+    ScrollReveal().reveal('.skills');
+    ScrollReveal().reveal('#carousel');
 // ScrollReveal().reveal('.punchline', { delay: 2000 });
 
 </script>
