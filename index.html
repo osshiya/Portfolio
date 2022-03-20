@@ -487,9 +487,15 @@
             width: 10vw;
         }
 
-        .currentslide img {
+        .currentslide {
+            min-width: 15vw;
             width: 15vw;
-            animation: current-img 0.8s ease-in-out;
+        }
+
+        .currentslide img {
+            max-width: 15vw;
+            width: 15vw;
+            animation: current-img 0.3s ease-in-out;
         }
 
         @keyframes current-img {
@@ -699,17 +705,20 @@
                     <div style="width: 28%; height: 100%;"></div>
                     <div style="width: 72%; height: 100%; padding: 2vh 0;">
                         <h2 id="displaystitle" style="text-align: left;">Internship</h2>
-                        <p id="displaysdesc" style="text-align: left;">Internship at AIDC Technology(s) Pte. Ltd.</p>
+                        <span id="displaysdesc" style="display: inline-block; text-align: left;">Internship at AIDC Technology(s) Pte. Ltd.</span>
+                        <div style="z-index: 10; padding: 6px 0;">
+                            <a id="displayslink" href="#" onMouseOver="this.style.backgroundColor='#0144f5'" onmouseout=" this.style.backgroundColor='#30c1f7'" style="display: inline-block; background-color: #30c1f7; padding: 0.8% 3%; border-radius: 60px; text-decoration: none; color: #ffffff;"><span>Visit</span></a>
+                        </div>
                      </div>
                 </div>
-                <div id="slider">
-                    <div class="slides slide-1 currentslide" data-slide-title="Internship" data-slide-desc="Internship at AIDC Technology(s) Pte. Ltd."><img src="images/portfolio/small_logo.png"></div>
-                    <div class="slides slide-2" data-slide-title="POP!" data-slide-desc="New age Social Media Mobile Application"><img src="images/portfolio/App Logo.png"></div>
-                    <div class="slides slide-3" data-slide-title="Park-A-Lot" data-slide-desc="Mobile application for car tracking in carparks"><img src="images/portfolio/logos.png"></div>
-                    <div class="slides slide-4" data-slide-title="CheckToday" data-slide-desc="CheckToday is an AR mobile application that can be used during the Coronavirus period"><img src="images/portfolio/applogo-02 copy 2.png"></div>
-                    <div class="slides slide-5" data-slide-title="Momentum" data-slide-desc="Mobile application that can be used to log daily moments"><img src="images/portfolio/Momentum Logo.png"></div>
-                    <div class="slides slide-6" data-slide-title="Singapore's Culture of Queuing" data-slide-desc="This is an Infographic Website based on Singapore's Culture of Queuing"><img src="images/portfolio/SCQLogo.png"></div>
-                    <div class="slides slide-7" data-slide-title="Destination" data-slide-desc="Destination is a website where users can use to navigate around Singapore"><img src="images/portfolio/destination-app-logo.png"></div>
+                <div id="slider" style="padding: 2vh 0;">
+                    <div class="slides slide-1 currentslide" onclick="plusSlides(1)" data-slide-title="Internship" data-slide-desc="Internship at AIDC Technology(s) Pte. Ltd." data-slide-link="#"><img src="images/portfolio/small_logo.png"></div>
+                    <div class="slides slide-2" onclick="plusSlides(1)" data-slide-title="POP!" data-slide-desc="New age Social Media Mobile Application" data-slide-link="https://github.com/osshiya/POP"><img src="images/portfolio/App Logo.png"></div>
+                    <div class="slides slide-3" onclick="plusSlides(1)" data-slide-title="Park-A-Lot" data-slide-desc="Mobile application for car tracking in carparks" data-slide-link="https://github.com/venusnmj/DME-ASG2"><img src="images/portfolio/logos.png"></div>
+                    <div class="slides slide-4" onclick="plusSlides(1)" data-slide-title="CheckToday" data-slide-desc="CheckToday is an AR mobile application that can be used during the Coronavirus period" data-slide-link="https://github.com/osshiya/DME-Assignment-1"><img src="images/portfolio/applogo-02 copy 2.png"></div>
+                    <div class="slides slide-5" onclick="plusSlides(1)" data-slide-title="Momentum" data-slide-desc="A simple mobile application that can be used to log daily moments" data-slide-link="#5"><img src="images/portfolio/Momentum Logo.png"></div>
+                    <div class="slides slide-6" onclick="plusSlides(1)" data-slide-title="Singapore's Culture of Queuing" data-slide-desc="This is an Infographic Website based on Singapore's Culture of Queuing" data-slide-link="https://github.com/osshiya/Singapore-s-Culture-of-Queuing"><img src="images/portfolio/SCQLogo.png"></div>
+                    <div class="slides slide-7" onclick="plusSlides(1)" data-slide-title="Destination" data-slide-desc="Destination is a website where users can use to navigate around Singapore" data-slide-link="https://github.com/osshiya/Destination"><img src="images/portfolio/destination-app-logo.png"></div>
                 </div>
 
             </div>
@@ -732,8 +741,6 @@
     const parallax = document.getElementById("parallax");
 
     window.onscroll = () => {
-        parallax.style.backgroundPositionY = pageYOffset = pageYOffset * 1 + "px";
-
         var current = "";
 
         sections.forEach((section) => {
@@ -749,6 +756,8 @@
                 a.classList.add("active");
             }
         });
+
+        parallax.style.backgroundPositionY = pageYOffset = pageYOffset * 1 + "px";
     };
 
     //carousel
@@ -804,8 +813,10 @@
         slides[0].className += " currentslide";
         var getTitle = slides[0].getAttribute("data-slide-title");
         var getDesc = slides[0].getAttribute("data-slide-desc");
+        var getLink = slides[0].getAttribute("data-slide-link");
         $("#displaystitle").text(getTitle);
         $("#displaysdesc").text(getDesc);
+        document.getElementById("displayslink").setAttribute("href", getLink);
     }
     function minusSlides(n) {
         showSlides(slideIndex += n);
@@ -813,16 +824,20 @@
         slides[0].className += " currentslide";
         var getTitle = slides[0].getAttribute("data-slide-title");
         var getDesc = slides[0].getAttribute("data-slide-desc");
+        var getLink = slides[0].getAttribute("data-slide-link");
         $("#displaystitle").text(getTitle);
         $("#displaysdesc").text(getDesc);
+        document.getElementById("displayslink").setAttribute("href", getLink);
     }
     // Thumbnail image controls
     function currentSlide(n) {
         showSlides(slideIndex = n);
         var getTitle = slides[0].getAttribute("data-slide-title");
         var getDesc = slides[0].getAttribute("data-slide-desc");
+        var getLink = slides[0].getAttribute("data-slide-link");
         $("#displaystitle").text(getTitle);
         $("#displaysdesc").text(getDesc);
+        document.getElementById("displayslink").setAttribute("href", getLink);
     }
 
     function showSlides(n) {
