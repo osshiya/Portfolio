@@ -144,7 +144,7 @@
             height: 100%;
         }
 
-        .home-svg svg{
+        .home-svg svg {
             mix-blend-mode: difference;
         }
 
@@ -185,63 +185,70 @@
             ;
         }
 
-.hometext h1, h2, h3{
-  white-space: nowrap;
-  overflow: hidden;
-}
-.hometext h2 {
-  width: 13.3em;
-  animation: type 2s steps(40, end);
-  animation-fill-mode: forwards;
-}
+        .hometext h1,
+        h2,
+        h3 {
+            white-space: nowrap;
+            overflow: hidden;
+        }
 
-.hometext h3 {
-  width: 5.5em;
-  opacity: 0;
-  animation: type2 1.1s;
-  animation-delay: 2s;
-  animation-fill-mode: forwards;
-}
+        .hometext h2 {
+            width: 13.3em;
+            animation: type 2s steps(40, end);
+            animation-fill-mode: forwards;
+        }
 
-.hometext h1 {
-  width: 7.3em;
-  opacity: 0;
-  animation: type3 1.3s;
-  animation-delay: 2.4s;
-  animation-fill-mode: forwards;
-}
+        .hometext h3 {
+            width: 5.5em;
+            opacity: 0;
+            animation: type2 1.1s;
+            animation-delay: 2s;
+            animation-fill-mode: forwards;
+        }
 
-@keyframes type {
-  0% {
-    width: 0;
-  }
-  99.9% {
-    border-right: .15em solid orange;
-  }
-  100% {
-    border: none;
-  }
-}
+        .hometext h1 {
+            width: 7.3em;
+            opacity: 0;
+            animation: type3 1.3s;
+            animation-delay: 2.4s;
+            animation-fill-mode: forwards;
+        }
 
+        @keyframes type {
+            0% {
+                width: 0;
+            }
 
-@keyframes type2 {
-  0% {
-    width: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
+            99.9% {
+                border-right: .15em solid orange;
+            }
+
+            100% {
+                border: none;
+            }
+        }
 
 
-@keyframes type3 {
-  0% {
-    width: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
+        @keyframes type2 {
+            0% {
+                width: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+
+        @keyframes type3 {
+            0% {
+                width: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
 
         @keyframes tri-two {
             from {
@@ -256,6 +263,7 @@
 
             ;
         }
+
         @keyframes tri-two {
             from {
                 transform: translateX(900px);
@@ -577,6 +585,7 @@
         .controls a {
             font-size: 50px;
         }
+
         .controls a:hover {
             color: #ad6f36;
         }
@@ -605,7 +614,7 @@
                 width: 15vw;
             }
 
-            ;   
+            ;
         }
     </style>
 </head>
@@ -799,24 +808,47 @@
                 <h2>PORTFOLIO</h2>
             </div>
             <div id="carousel">
-                <div class="displaystxt" style="width: 100%; height: 100%; display:flex; flex-direction: row; position: absolute; overflow: hidden;">
+                <div class="displaystxt"
+                    style="width: 100%; height: 100%; display:flex; flex-direction: row; position: absolute; overflow: hidden;">
                     <div style="width: 28%; height: 100%;"></div>
                     <div style="width: 72%; height: 100%; padding: 2vh 0;">
                         <h2 id="displaystitle" style="text-align: left;">Internship</h2>
-                        <span id="displaysdesc" style="display: inline-block; text-align: left;">Internship at AIDC Technology(s) Pte. Ltd.</span>
+                        <span id="displaysdesc" style="display: inline-block; text-align: left;">Internship at AIDC
+                            Technology(s) Pte. Ltd.</span>
                         <div style="z-index: 10; padding: 6px 0;">
-                            <a id="displayslink" href="#" onMouseOver="this.style.backgroundColor='#0144f5'" onmouseout=" this.style.backgroundColor='#30c1f7'" style="display: inline-block; background-color: #30c1f7; padding: 0.8% 3%; border-radius: 60px; text-decoration: none; color: #ffffff;"><span>Visit</span></a>
+                            <a id="displayslink" href="#" onMouseOver="this.style.backgroundColor='#0144f5'"
+                                onmouseout=" this.style.backgroundColor='#30c1f7'"
+                                style="display: inline-block; background-color: #30c1f7; padding: 0.8% 3%; border-radius: 60px; text-decoration: none; color: #ffffff;"><span>Visit</span></a>
                         </div>
-                     </div>
+                    </div>
                 </div>
                 <div id="slider" style="padding: 2vh 0;">
-                    <div class="slides slide-1 currentslide" onclick="plusSlides(1)" data-slide-title="Internship" data-slide-desc="Internship at AIDC Technology(s) Pte. Ltd." data-slide-link="#"><img src="images/portfolio/small_logo.png"></div>
-                    <div class="slides slide-2" onclick="plusSlides(1)" data-slide-title="POP!" data-slide-desc="New age Social Media Mobile Application" data-slide-link="https://github.com/osshiya/POP"><img src="images/portfolio/App Logo.png"></div>
-                    <div class="slides slide-3" onclick="plusSlides(1)" data-slide-title="Park-A-Lot" data-slide-desc="Mobile application for car tracking in carparks" data-slide-link="https://github.com/venusnmj/DME-ASG2"><img src="images/portfolio/logos.png"></div>
-                    <div class="slides slide-4" onclick="plusSlides(1)" data-slide-title="CheckToday" data-slide-desc="CheckToday is an AR mobile application that can be used during the Coronavirus period" data-slide-link="https://github.com/osshiya/DME-Assignment-1"><img src="images/portfolio/applogo-02 copy 2.png"></div>
-                    <div class="slides slide-5" onclick="plusSlides(1)" data-slide-title="Momentum" data-slide-desc="A simple mobile application that can be used to log daily moments" data-slide-link="#5"><img src="images/portfolio/Momentum Logo.png"></div>
-                    <div class="slides slide-6" onclick="plusSlides(1)" data-slide-title="Singapore's Culture of Queuing" data-slide-desc="This is an Infographic Website based on Singapore's Culture of Queuing" data-slide-link="https://github.com/osshiya/Singapore-s-Culture-of-Queuing"><img src="images/portfolio/SCQLogo.png"></div>
-                    <div class="slides slide-7" onclick="plusSlides(1)" data-slide-title="Destination" data-slide-desc="Destination is a website where users can use to navigate around Singapore" data-slide-link="https://github.com/osshiya/Destination"><img src="images/portfolio/destination-app-logo.png"></div>
+                    <div class="slides slide-1 currentslide" onclick="plusSlides(1)" data-slide-title="Internship"
+                        data-slide-desc="Internship at AIDC Technology(s) Pte. Ltd." data-slide-link="#"><img
+                            src="images/portfolio/small_logo.png"></div>
+                    <div class="slides slide-2" onclick="plusSlides(1)" data-slide-title="POP!"
+                        data-slide-desc="New age Social Media Mobile Application"
+                        data-slide-link="https://github.com/osshiya/POP"><img src="images/portfolio/App Logo.png"></div>
+                    <div class="slides slide-3" onclick="plusSlides(1)" data-slide-title="Park-A-Lot"
+                        data-slide-desc="Mobile application for car tracking in carparks"
+                        data-slide-link="https://github.com/venusnmj/DME-ASG2"><img src="images/portfolio/logos.png">
+                    </div>
+                    <div class="slides slide-4" onclick="plusSlides(1)" data-slide-title="CheckToday"
+                        data-slide-desc="CheckToday is an AR mobile application that can be used during the Coronavirus period"
+                        data-slide-link="https://github.com/osshiya/DME-Assignment-1"><img
+                            src="images/portfolio/applogo-02 copy 2.png"></div>
+                    <div class="slides slide-5" onclick="plusSlides(1)" data-slide-title="Momentum"
+                        data-slide-desc="A simple mobile application that can be used to log daily moments"
+                        data-slide-link="#5"><img src="images/portfolio/Momentum Logo.png"></div>
+                    <div class="slides slide-6" onclick="plusSlides(1)"
+                        data-slide-title="Singapore's Culture of Queuing"
+                        data-slide-desc="This is an Infographic Website based on Singapore's Culture of Queuing"
+                        data-slide-link="https://github.com/osshiya/Singapore-s-Culture-of-Queuing"><img
+                            src="images/portfolio/SCQLogo.png"></div>
+                    <div class="slides slide-7" onclick="plusSlides(1)" data-slide-title="Destination"
+                        data-slide-desc="Destination is a website where users can use to navigate around Singapore"
+                        data-slide-link="https://github.com/osshiya/Destination"><img
+                            src="images/portfolio/destination-app-logo.png"></div>
                 </div>
 
             </div>
