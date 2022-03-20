@@ -144,6 +144,10 @@
             height: 100%;
         }
 
+        .home-svg svg{
+            mix-blend-mode: difference;
+        }
+
         .home-svg .tri-top {
             animation: tri-one 2s forwards;
         }
@@ -431,7 +435,7 @@
             position: relative;
             /* width: 800px; */
             height: 4px;
-            margin: 15% auto;
+            margin: 10% auto;
             background-color: white;
         }
 
@@ -448,7 +452,7 @@
             padding: 0.3% 0.4%;
             position: relative;
             background-color: none;
-            max-width: 15%;
+            max-width: 17%;
         }
 
         /* The circles on the timeline */
@@ -467,12 +471,12 @@
         }
 
         .left {
-            top: -143px;
+            top: -123px;
         }
 
         .left .content,
         .left .year {
-            top: 0.3%;
+            top: 0.6%;
         }
 
 
@@ -482,7 +486,12 @@
         }
 
         .right::after {
-            top: -40px;
+            top: -25px;
+        }
+
+        .right .content,
+        .right .year {
+            top: 8px;
         }
 
         .content {
@@ -635,18 +644,18 @@
             style="height: 100vh; background-color: rgba(255, 255, 255, 0); position: relative; z-index: 2;">
             <div class="home-svg" style="width: 100%; position: absolute">
                 <svg height="650" width="330" style="position: absolute; z-index: -2; overflow:hidden;" class="tri-top">
-                    <polygon points="0,0 0,650 330,0" style="fill:rgba(255, 0, 0, 0.800);" />
+                    <polygon points="0,0 0,650 330,0" style="fill:rgb(255, 0, 0);" />
                 </svg>
                 <svg height="100vh" width="330" style="position: absolute; z-index: -1; overflow:hidden;"
                     class="tri-bot">
-                    <polygon points="0,1500 0,190 330,1500" style="fill:rgba(0, 255, 0, 0.800);" />
+                    <polygon points="0,1500 0,190 330,1500" style="fill: rgb(255, 255, 0);" />
                 </svg>
             </div>
             <div class="home-left" style="float: left; text-align: left; width:50%; padding: 5vh 5vw;">
                 <div class="hometext" style="width:100%; height: 100vh; display:table-cell; vertical-align: middle;">
                     <h2>Welcome to my Portfolio</h2>
-                    <h3 style="display:inline; color: #3d1daf;">I am </h3>
-                    <h1 style="display:inline; color: #f1960d;">Ong Shi Ya</h1>
+                    <h3 style="display:inline;">I am </h3>
+                    <h1 style="display:inline; color: #ff9900;">Ong Shi Ya</h1>
                 </div>
             </div>
             <div class="home-right" style="float: right; width:50%; padding: 5vh 3vw;">
@@ -757,17 +766,17 @@
                 <div class="skills-l" style="width: 70%;">
                     <svg height="18vh" width="100%" viewBox="0 0 800 100">
                         <polygon points="0,25 500,10 510,50 0,70"
-                            style="fill:rgba(253, 253, 253, 0.8); filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, 0.6));" />
+                            style="fill:rgb(253, 253, 253); filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, 0.6));" />
                         <text x="680" y="40" text-anchor="end" fill="black" font-size="2.3vh">Programming</text>
                     </svg>
                     <svg height="18vh" width="100%" viewBox="0 0 800 100">
                         <polygon points="0,25 400,10 410,50 0,70"
-                            style="fill:rgba(253, 253, 253, 0.8); filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, 0.6));" />
+                            style="fill:rgb(253, 253, 253); filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, 0.6));" />
                         <text x="580" y="40" text-anchor="end" fill="black" font-size="2.3vh">Web Design</text>
                     </svg>
                     <svg height="18vh" width="100%" viewBox="0 0 800 100">
                         <polygon points="0,25 350,10 360,50 0,70"
-                            style="fill:rgba(253, 253, 253, 0.8); filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, 0.6));" />
+                            style="fill:rgb(253, 253, 253); filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, 0.6));" />
                         <text x="530" y="40" text-anchor="end" fill="black" font-size="2.3vh">UI/UX Design</text>
                     </svg>
                     <svg height="18vh" width="100%" viewBox="0 0 800 100">
