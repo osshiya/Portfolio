@@ -1,6 +1,14 @@
-img, p, h1, h2, h3, h4, h5, h6, span{
-    pointer-events: none;
-    user-select: none;
+img,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span {
+  pointer-events: none;
+  user-select: none;
 }
 
 html,
@@ -419,9 +427,12 @@ transition: all 1s;
 }
 
 .wave-btn:hover:before {
-  top: 10px;
-  width: 360px;
-  height: 360px;
+  width: 80px;
+  height: 100px;
+  border-radius: 130px;
+  top: 0px;
+  left: 50%;
+  transform: translate(-50%);
 }
 
 .xxwave-btn:hover {
@@ -660,6 +671,13 @@ transition: all 1s;
     justify-content: center;
     flex-direction: column;
   }
+
+  .wave-btn::before:hover {
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+  }
+
   .socialmediabtns {
     width: 100%;
     text-align: center;
