@@ -649,7 +649,11 @@ transition: all 1s;
     justify-content: center;
     width: calc(100% / 4 - 450px);
     display: inline-block;
-    padding: 28px;
+    margin: auto;
+  }
+
+  .socialmediabtn a i{
+      font-size: 4vw;
   }
 
   .displaystxt-1 {
