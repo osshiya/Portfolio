@@ -56,14 +56,6 @@
             font-size: 0.8em;
         }
 
-        @media only screen and (min-width: 600px) {
-            /* For tablets: */
-        }
-
-        @media only screen and (min-width: 768px) {
-            /* For desktop: */
-        }
-
         nav {
             display: flex;
             justify-content: space-between;
@@ -438,101 +430,78 @@
             color: #ffffff;
         }
 
-        /* The actual timeline (the vertical ruler) */
         .timeline {
-            position: relative;
-            /* width: 800px; */
-            height: 4px;
-            margin: 10% auto;
-            background-color: white;
+            padding: 0 4%;
+            width: 80%;
+            height: 20px;
+            list-style: none;
+            text-align: justify;
+            margin: 80px auto;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 45%, rgb(255, 255, 255) 51%, rgba(255, 255, 255, 0) 57%, rgba(255, 255, 255, 0) 100%);
         }
 
-        /* The actual timeline (the vertical ruler) */
-        .timeline::after {
-            content: '';
+        .timeline:after {
             display: inline-block;
+            content: "";
             width: 100%;
         }
 
-        /* Container around content */
-        .timeline-pt {
+        .timeline li {
             display: inline-block;
-            padding: 0.3% 0.4%;
+            width: calc(9px + 0.8vw);
+            height: calc(9px + 0.8vw);
+            background: rgb(70, 102, 146);
+            border: 3px solid#ffffff;
+            text-align: center;
+            line-height: 1.2;
             position: relative;
-            background-color: none;
-            max-width: 17%;
+            border-radius: 50%;
         }
 
-        /* The circles on the timeline */
-        .timeline-pt:after {
-            content: '';
+        .timeline li:before {
             display: inline-block;
+            content: attr(data-year);
+            font-size: calc(11px + 0.8vw);
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
-            width: 25px;
-            height: 25px;
-            background-color: rgb(70, 102, 146);
-            border: 4px solid #ffffff;
-            border-radius: 50%;
-            z-index: 1;
         }
 
-        .left {
-            top: -123px;
+        .timeline li:nth-child(odd):before {
+            top: -40px;
         }
 
-        .left .content,
-        .left .year {
-            top: 0.6%;
+        .timeline li:nth-child(even):before {
+            bottom: -40px;
         }
 
-
-        /* Place the container to the right */
-        .right {
-            top: 50%;
+        .timeline li:after {
+            display: inline-block;
+            content: attr(data-text);
+            font-size: calc(6px + 0.8vw);
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
         }
 
-        .right::after {
-            top: -25px;
+        .timeline li:nth-child(odd):after {
+            bottom: 0;
+            margin-bottom: -10px;
+            transform: translate(-50%, 100%);
         }
 
-        .right .content,
-        .right .year {
-            top: 8px;
+        .timeline li:nth-child(even):after {
+            top: 0;
+            margin-top: -10px;
+            transform: translate(-50%, -100%);
         }
-
-        .content {
-            /* transform:rotate(90deg) translateX(-100%); */
-            padding: 20px 10px;
-            /* background-color: rgba(255, 255, 255, 0.5); */
-            position: relative;
-            border-radius: 6px;
-        }
-
-        .content p {
-            color: #ffffff;
-            font-size: calc(4px + 0.8vw);
-        }
-
-        .year {
-            color: #ffffff;
-        }
-
-        /* .left .year {
-    left: 70px;
-}
-.right .year {
-    left: -70px;
-    top: 70px;
-} */
 
         #carousel {
             background: none;
             border: 0px solid #c058dc;
             border-radius: 5px;
             width: 100%;
-            height: 50vh;
+            height: 55vh;
             position: relative;
             overflow: hidden;
         }
@@ -616,6 +585,48 @@
 
             ;
         }
+
+        @media only screen and (max-width:768px) {
+        .socialmediabtn{
+            width: 2px;
+        }
+
+        .displaystxt-1{
+            width: 0% !important;
+            padding: 0 8%;
+        }
+
+        .slides{
+            padding: 0 20px;
+        }
+
+        .slides img {
+            width: 10vh;
+        }
+
+        .currentslide {
+            min-width: 15vh;
+            width: 15vh;
+        }
+
+        .currentslide img {
+            max-width: 15vh;
+            width: 15vh;
+            animation: current-img 0.3s ease-in-out;
+        }
+
+        @keyframes current-img {
+            from {
+                width: 10vw;
+            }
+
+            to {
+                width: 15vh;
+            }
+
+            ;
+        }
+        }
     </style>
 </head>
 
@@ -652,19 +663,19 @@
         <div class="container"
             style="height: 100vh; background-color: rgba(255, 255, 255, 0); position: relative; z-index: 2;">
             <div class="home-svg" style="width: 100%; position: absolute">
-                <svg height="650" width="330" style="position: absolute; z-index: -2; overflow:hidden;" class="tri-top">
+                <svg height="650" width="" style="position: absolute; z-index: -2; overflow:hidden;" class="tri-top">
                     <polygon points="0,0 0,650 330,0" style="fill:rgb(255, 0, 0);" />
                 </svg>
-                <svg height="100vh" width="330" style="position: absolute; z-index: -1; overflow:hidden;"
+                <svg height="100vh" width="" style="position: absolute; z-index: -1; overflow:hidden;"
                     class="tri-bot">
                     <polygon points="0,1500 0,190 330,1500" style="fill: rgb(255, 255, 0);" />
                 </svg>
             </div>
             <div class="home-left" style="float: left; text-align: left; width:50%; padding: 5vh 5vw;">
                 <div class="hometext" style="width:100%; height: 100vh; display:table-cell; vertical-align: middle;">
-                    <h2>Welcome to my Portfolio</h2>
-                    <h3 style="display:inline;">I am </h3>
-                    <h1 style="display:inline; color: #ff9900;">Ong Shi Ya</h1>
+                    <h2 style="font-size: 4vw;">Welcome to my Portfolio</h2>
+                    <h3 style="display:inline; font-size: 4vw;">I am </h3>
+                    <h1 style="display:inline; color: #ff9900; font-size: 6vw;">Ong Shi Ya</h1>
                 </div>
             </div>
             <div class="home-right" style="float: right; width:50%; padding: 5vh 3vw;">
@@ -717,50 +728,16 @@
             <div class="container infos" style="flex-direction: column; flex-wrap: nowrap;">
                 <h2 style="display: inline-block; width: 100%; text-align: center; margin-bottom: calc(80px + 1vh);">
                     HISTORY</h2>
-                <div class="timeline">
-                    <div class="timeline-pt left">
-                        <div class="content">
-                            <p>AIDC Technology(s) Pte. Ltd.</p>
-                            <h6>Immersive Media Intern</h6>
-                        </div>
-                        <h4 class="year" style="text-align: center;">2021</h4>
-                    </div>
-                    <div class="timeline-pt right">
-                        <h4 class="year" style="text-align: center;">2019</h4>
-                        <div class="content">
-                            <p>Ngee Ann Polytechnic</p>
-                            <h6>Diploma in Immersive Media & Game Design</h6>
-                        </div>
-                    </div>
-                    <div class="timeline-pt left">
-                        <div class="content">
-                            <p>Mr Bean</p>
-                            <h6>PT Crew</h6>
-                        </div>
-                        <h4 class="year" style="text-align: center;">2019</h4>
-                    </div>
-                    <div class="timeline-pt left">
-                        <div class="content">
-                            <p>Monster Curry</p>
-                            <h6>FT/PT Service Crew</h6>
-                        </div>
-                        <h4 class="year" style="text-align: center;">2018</h4>
-                    </div>
-                    <div class="timeline-pt left">
-                        <div class="content">
-                            <p>Bee Cheng Hiang</p>
-                            <h6>Kitchen Assistant</h6>
-                        </div>
-                        <h4 class="year" style="text-align: center;">2018</h4>
-                    </div>
-                    <div class="timeline-pt right">
-                        <h4 class="year" style="text-align: center;">2014</h4>
-                        <div class="content">
-                            <p>Boon Lay Secondary</p>
-                            <h6>Express Stream<br>CO SYF 2017</h6>
-                        </div>
-                    </div>
-                </div>
+                <ul class="timeline">
+                    <li data-year="2014" data-text="Boon Lay Secondary" data-stext="Express Stream"></li>
+                    <li data-year="2018" data-text="Bee Cheng Hiang" data-stext="Kitchen Assistant"></li>
+                    <li data-year="2018" data-text="Monster Curry" data-stext="FT/PT Service Crew"></li>
+                    <li data-year="2019" data-text="Mr Bean" data-stext="PT Crew"></li>
+                    <li data-year="2019" data-text="Ngee Ann Polytechnic"
+                        data-stext="Diploma in Immersive Media & Game Design"></li>
+                    <li data-year="2021" data-text="AIDC Technology(s) Pte. Ltd." data-stext="Immersive Media Intern">
+                    </li>
+                </ul>
             </div>
         </div>
     </section>
@@ -776,22 +753,22 @@
                     <svg height="18vh" width="100%" viewBox="0 0 800 100">
                         <polygon points="0,25 500,10 503,60 0,75"
                             style="fill:rgb(253, 253, 253); filter: drop-shadow( 1.5px 1.5px 1px rgba(139, 139, 139, 0.6));" />
-                        <text x="680" y="40" text-anchor="end" fill="white" font-size="2.3vh">Programming</text>
+                        <text x="700" y="40" text-anchor="end" fill="white" font-size="24px">Programming</text>
                     </svg>
                     <svg height="18vh" width="100%" viewBox="0 0 800 100">
                         <polygon points="0,25 400,10 403,60 0,75"
                             style="fill:rgb(253, 253, 253); filter: drop-shadow( 1.5px 1.5px 1px rgba(139, 139, 139, 0.6));" />
-                        <text x="580" y="40" text-anchor="end" fill="white" font-size="2.3vh">Web Design</text>
+                        <text x="600" y="40" text-anchor="end" fill="white" font-size="24px">Web Design</text>
                     </svg>
                     <svg height="18vh" width="100%" viewBox="0 0 800 100">
                         <polygon points="0,25 350,10 353,60 0,75"
                             style="fill:rgb(253, 253, 253); filter: drop-shadow( 1.5px 1.5px 1px rgba(139, 139, 139, 0.6));" />
-                        <text x="530" y="40" text-anchor="end" fill="white" font-size="2.3vh">UI/UX Design</text>
+                        <text x="550" y="40" text-anchor="end" fill="white" font-size="24px">UI/UX Design</text>
                     </svg>
                     <svg height="18vh" width="100%" viewBox="0 0 800 100">
                         <polygon points="0,25 300,10 303,60 0,75"
                             style="fill:rgba(253, 253, 253, 0.8); filter: drop-shadow( 1.5px 1.5px 1px rgba(139, 139, 139, 0.6));" />
-                        <text x="500" y="40" text-anchor="end" fill="white" font-size="2.3vh">Graphic Design</text>
+                        <text x="500" y="40" text-anchor="end" fill="white" font-size="24px">Graphic Design</text>
                     </svg>
                 </div>
                 <div class="skills-r" style="width: 30%;">
@@ -810,11 +787,12 @@
             <div id="carousel">
                 <div class="displaystxt"
                     style="width: 100%; height: 100%; display:flex; flex-direction: row; position: absolute; overflow: hidden;">
-                    <div style="width: 28%; height: 100%;"></div>
-                    <div style="width: 72%; height: 100%; padding: 2vh 0;">
-                        <h2 id="displaystitle" style="text-align: left;">Internship</h2>
-                        <span id="displaysdesc" style="display: inline-block; text-align: left;">Internship at AIDC
-                            Technology(s) Pte. Ltd.</span>
+                    <div class="displaystxt-1" style="width: 28%; height: 100%;"></div>
+                    <div class="displaystxt-2" style="width: 72%; height: 100%; padding: 2vh 1vw 2vh 0;">
+                        <span id="displaystitle" style="display: block; text-align: left; color: #ffffff; font-size: calc(18px + 0.8vw);">Internship</span>
+                        <span id="displaysdesc"
+                            style="display: inline-block; text-align: left; color: #ffffff; font-size: calc(9px + 0.8vw)">Internship at AIDC
+                                Technology(s) Pte. Ltd.</span>
                         <div style="z-index: 10; padding: 6px 0;">
                             <a id="displayslink" href="#" onMouseOver="this.style.backgroundColor='#ffffff43'"
                                 onmouseout=" this.style.backgroundColor='transparent'"
