@@ -481,6 +481,10 @@ transition: all 1s;
   flex-direction: column;
 }
 
+#skill .skills svg text{
+    transform: rotate(-3deg);
+}
+
 .timeline {
   padding: 0 4%;
   width: 80%;
