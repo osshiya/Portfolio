@@ -634,19 +634,27 @@ transition: all 1s;
 }
 
 @media only screen and (max-width: 768px) {
-html,
-body {
-  background-image: url("images/BG.png");
-  background-repeat: repeat;
-  background-attachment: initial;
-}
+  html,
+  body {
+    background-image: url("images/BG.png");
+    background-repeat: repeat;
+    background-attachment: initial;
+  }
 
-.card{
+  .home-svg svg {
+    overflow: visible;
+  }
+
+  .home-svg .tri-bot {
+    overflow: hidden;
+  }
+
+  .card {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
-}
+  }
   .socialmediabtns {
     width: 100%;
     text-align: center;
@@ -654,13 +662,13 @@ body {
 
   .socialmediabtn {
     justify-content: center;
-    width: calc(100% / 4 - 450px);
+    width: calc(100% / 4);
     display: inline-block;
-    margin: auto;
   }
 
-  .socialmediabtn a i{
-      font-size: 4vw;
+  .socialmediabtn a i {
+    font-size: 2.5vw;
+    /*padding: 1vh;*/
   }
 
   .displaystxt-1 {
@@ -696,5 +704,12 @@ body {
     to {
       width: 15vh;
     }
+  }
+}
+
+@media only screen and (max-width: 425px) {
+  .socialmediabtn a i {
+    font-size: 5vw;
+    padding: 3vh;
   }
 }
