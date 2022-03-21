@@ -9,6 +9,7 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -16,623 +17,11 @@
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
-
-
-    <style>
-        html,
-        body {
-            width: 100%;
-            height: 100vh;
-            font-family: 'Comfortaa', cursive;
-            background-image: url("images/BG.png");
-            background-repeat: repeat;
-            /* background-size: cover; */
-            background-attachment: fixed;
-            /* background-color: red; */
-        }
-
-        /* body{
-        margin: 0;
-        padding: 0;
-        padding-left: 3vw;
-    } */
-
-        * {
-            padding: 0;
-            margin: 0;
-            position: relative;
-            /* box-sizing: border-box; */
-        }
-
-        h1 {
-            font-size: 4em;
-        }
-
-        h2 {
-            font-size: 2em;
-        }
-
-        p {
-            font-size: 0.8em;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            width: 100vh;
-            /* height:5%; */
-            position: fixed;
-            /* background:#4c4c4c21; */
-            transform-origin: 0 0;
-            transform: rotate(-90deg) translateX(-100%);
-            background-color: #f5f6fa;
-            align-items: center;
-        }
-
-        nav ul {
-            display: flex;
-            list-style-type: none;
-            padding: 0;
-            text-align: center;
-        }
-
-        nav ul li {
-            padding: 10px;
-            display: inline-block;
-            vertical-align: middle;
-        }
-
-        nav ul li a {
-            height: 10px;
-            text-decoration: none;
-            transition: all 0.3s ease-out;
-            fill: #e0e0e0;
-        }
-
-        nav ul li a.home:hover,
-        nav ul li a.home:active,
-        a.home.active {
-            text-decoration: none;
-            fill: rgb(0, 255, 0);
-        }
-
-        nav ul li a.portfolio:hover,
-        nav ul li a.portfolio:active,
-        a.portfolio.active {
-            text-decoration: none;
-            fill: rgb(200, 255, 0);
-        }
-
-        nav ul li a.info:hover,
-        nav ul li a.info:active,
-        a.info.active {
-            text-decoration: none;
-            fill: rgb(0, 0, 255);
-        }
-
-        nav ul li a.skill:hover,
-        nav ul li a.skill:active,
-        a.skill.active {
-            text-decoration: none;
-            fill: rgb(255, 0, 0);
-        }
-
-        .svg-group svg {
-            width: 10px;
-        }
-
-        /* nav ul li a svg circle{
-        fill:rgb(36, 36, 255);
-    } */
-
-        section {
-            margin-left: 38.4px;
-            width: 100vw - 5%;
-        }
-
-        .container {
-            display: flex;
-            width: 100%;
-            height: 100%;
-        }
-
-        .home-svg svg {
-            mix-blend-mode: difference;
-        }
-
-        .home-svg .tri-top {
-            animation: tri-one 2s forwards;
-        }
-
-        .home-svg .tri-bot {
-            overflow: hidden;
-            animation: tri-two 3s forwards;
-        }
-
-        @keyframes tri-one {
-            from {
-                transform: translateX(-900px);
-                transform: translateY(-900px);
-            }
-
-            to {
-                transform: translateX(0);
-                transform: translateY(0);
-            }
-
-            ;
-        }
-
-        @keyframes tri-two {
-            from {
-                transform: translateX(900px);
-                transform: translateY(900px);
-            }
-
-            to {
-                transform: translateX(0);
-                transform: translateY(0);
-            }
-
-            ;
-        }
-
-        .hometext h1,
-        h2,
-        h3 {
-            white-space: nowrap;
-            overflow: hidden;
-        }
-
-        .hometext h2 {
-            width: 13.3em;
-            animation: type 2s steps(40, end);
-            animation-fill-mode: forwards;
-        }
-
-        .hometext h3 {
-            width: 5.5em;
-            opacity: 0;
-            animation: type2 1.1s;
-            animation-delay: 2s;
-            animation-fill-mode: forwards;
-        }
-
-        .hometext h1 {
-            width: 7.3em;
-            opacity: 0;
-            animation: type3 1.3s;
-            animation-delay: 2.4s;
-            animation-fill-mode: forwards;
-        }
-
-        @keyframes type {
-            0% {
-                width: 0;
-            }
-
-            99.9% {
-                border-right: .15em solid orange;
-            }
-
-            100% {
-                border: none;
-            }
-        }
-
-
-        @keyframes type2 {
-            0% {
-                width: 0;
-            }
-
-            100% {
-                opacity: 1;
-            }
-        }
-
-
-        @keyframes type3 {
-            0% {
-                width: 0;
-            }
-
-            100% {
-                opacity: 1;
-            }
-        }
-
-        @keyframes tri-two {
-            from {
-                transform: translateX(900px);
-                transform: translateY(900px);
-            }
-
-            to {
-                transform: translateX(0);
-                transform: translateY(0);
-            }
-
-            ;
-        }
-
-        @keyframes tri-two {
-            from {
-                transform: translateX(900px);
-                transform: translateY(900px);
-            }
-
-            to {
-                transform: translateX(0);
-                transform: translateY(0);
-            }
-
-            ;
-        }
-
-        .socialmediabtn {
-            justify-content: center;
-            width: calc(100% / 4 - 450px);
-            display: inline-block;
-            padding: 35px;
-        }
-
-        .portfoliobtn {
-            /* width: calc(100% / 2 - 300px); */
-            width: 100%;
-            padding: 30px 0;
-        }
-
-        .wave-btn {
-            color: #fff;
-            text-decoration: none;
-            padding: 0.5% 24%;
-            font-size: 22px;
-            line-height: 52px;
-            border-radius: 180px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            overflow: hidden;
-            transition: all 1s;
-        }
-
-        .xxwave-btn {
-            color: #fff;
-            text-decoration: none;
-            padding: 1.2% 8%;
-            font-size: 14px;
-            line-height: 30px;
-            border-radius: 180px;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            overflow: hidden;
-            transition: all 1s;
-        }
-
-        /* .wave-btn:before {
-        content: "";
-        position: absolute;
-        width: 320px;
-        height: 320px;
-        border-radius: 130px;
-        background-color: #0097e6; 
-        background-image: radial-gradient(#00bcd4, #0097e6); 
-        top: 20px;
-        left: 50%;
-        transform: translate(-50%);
-        animation: wave 5s infinite linear;
-        transition: all 1s;
-    }  */
-        .socialmediabtn1 .wave-btn:before {
-            background-image: radial-gradient(#11061a, #700cc2);
-            content: "";
-            position: absolute;
-            width: 80px;
-            height: 100px;
-            border-radius: 130px;
-            /* background-color: #0097e6; */
-            /* background-image: radial-gradient(#00bcd4, #0097e6); */
-            top: 20px;
-            left: 50%;
-            transform: translate(-50%);
-            animation: wave 3s infinite linear;
-            transition: all 1s;
-            overflow: hidden;
-        }
-
-        .socialmediabtn2 .wave-btn:before {
-            background-image: radial-gradient(#38accf, #61ffdd);
-            content: "";
-            position: absolute;
-            width: 80px;
-            height: 100px;
-            border-radius: 130px;
-            /* background-color: #0097e6; */
-            /* background-image: radial-gradient(#00bcd4, #0097e6); */
-            top: 20px;
-            left: 50%;
-            transform: translate(-50%);
-            animation: wave 3.4s infinite linear;
-            transition: all 1s;
-            overflow: hidden;
-        }
-
-        .socialmediabtn3 .wave-btn:before {
-            background-image: radial-gradient(#0270ad, #ff2d2d);
-            content: "";
-            position: absolute;
-            width: 80px;
-            height: 100px;
-            border-radius: 130px;
-            /* background-color: #0097e6; */
-            /* background-image: radial-gradient(#00bcd4, #0097e6); */
-            top: 20px;
-            left: 50%;
-            transform: translate(-50%);
-            animation: wave 3.8s infinite linear;
-            transition: all 1s;
-            overflow: hidden;
-        }
-
-        .socialmediabtn4 .wave-btn:before {
-            background-image: radial-gradient(#ff0000, #dfff2d);
-            content: "";
-            position: absolute;
-            width: 80px;
-            height: 100px;
-            border-radius: 130px;
-            /* background-color: #0097e6; */
-            /* background-image: radial-gradient(#00bcd4, #0097e6); */
-            top: 20px;
-            left: 50%;
-            transform: translate(-50%);
-            animation: wave 4.2s infinite linear;
-            transition: all 1s;
-            overflow: hidden;
-        }
-
-        .portfoliobtn1 .xxwave-btn,
-        .portfoliobtn2 .xxwave-btn {
-            background-color: #30c1f7;
-            transition: background-color 300ms ease-in;
-            box-shadow: 2px 2px 5px #11061a46;
-        }
-
-        .wave-btn:hover:before {
-            top: 10px;
-            width: 360px;
-            height: 360px;
-        }
-
-        .xxwave-btn:hover {
-            background-color: #0144f5;
-        }
-
-        @keyframes wave {
-            0% {
-                transform: translate(-50%) rotate(-180deg);
-            }
-
-            100% {
-                transform: translate(-50%) rotate(360deg);
-            }
-        }
-
-        .infos,
-        .more-info {
-            /* height:100%;
-        min-width: 100%; */
-            text-align: center;
-            color: #ffffff;
-        }
-
-        .timeline {
-            padding: 0 4%;
-            width: 80%;
-            height: 20px;
-            list-style: none;
-            text-align: justify;
-            margin: 80px auto;
-            background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 45%, rgb(255, 255, 255) 51%, rgba(255, 255, 255, 0) 57%, rgba(255, 255, 255, 0) 100%);
-        }
-
-        .timeline:after {
-            display: inline-block;
-            content: "";
-            width: 100%;
-        }
-
-        .timeline li {
-            display: inline-block;
-            width: calc(9px + 0.8vw);
-            height: calc(9px + 0.8vw);
-            background: rgb(70, 102, 146);
-            border: 3px solid#ffffff;
-            text-align: center;
-            line-height: 1.2;
-            position: relative;
-            border-radius: 50%;
-        }
-
-        .timeline li:before {
-            display: inline-block;
-            content: attr(data-year);
-            font-size: calc(11px + 0.8vw);
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .timeline li:nth-child(odd):before {
-            top: -40px;
-        }
-
-        .timeline li:nth-child(even):before {
-            bottom: -40px;
-        }
-
-        .timeline li:after {
-            display: inline-block;
-            content: attr(data-text);
-            font-size: calc(6px + 0.8vw);
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-
-        .timeline li:nth-child(odd):after {
-            bottom: 0;
-            margin-bottom: -10px;
-            transform: translate(-50%, 100%);
-        }
-
-        .timeline li:nth-child(even):after {
-            top: 0;
-            margin-top: -10px;
-            transform: translate(-50%, -100%);
-        }
-
-        #carousel {
-            background: none;
-            border: 0px solid #c058dc;
-            border-radius: 5px;
-            width: 100%;
-            height: 55vh;
-            position: relative;
-            overflow: hidden;
-        }
-
-        #slider {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: nowrap;
-            height: 100%;
-            width: 100%;
-            transition: all 0.5s;
-            position: relative;
-            overflow: hidden;
-            padding: 0 2vw;
-        }
-
-        .slides {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 0 50px;
-            width: 15%;
-            height: 100%;
-            font-size: 20px;
-            /* overflow: hidden; */
-        }
-
-        .controls a.next {
-            position: absolute;
-            right: 20px;
-            top: 20px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            outline: none;
-            color: #dc9858;
-        }
-
-        .controls a.prev {
-            position: absolute;
-            left: 20px;
-            top: 20px;
-            background: none;
-            border: none;
-            cursor: pointer;
-            outline: none;
-            color: #dc9858;
-        }
-
-        .controls a {
-            font-size: 50px;
-        }
-
-        .controls a:hover {
-            color: #ad6f36;
-        }
-
-        .slides img {
-            width: 10vw;
-        }
-
-        .currentslide {
-            min-width: 15vw;
-            width: 15vw;
-        }
-
-        .currentslide img {
-            max-width: 15vw;
-            width: 15vw;
-            animation: current-img 0.3s ease-in-out;
-        }
-
-        @keyframes current-img {
-            from {
-                width: 10vw;
-            }
-
-            to {
-                width: 15vw;
-            }
-
-            ;
-        }
-
-        @media only screen and (max-width:768px) {
-        .socialmediabtn{
-            width: 2px;
-        }
-
-        .displaystxt-1{
-            width: 0% !important;
-            padding: 0 8%;
-        }
-
-        .slides{
-            padding: 0 20px;
-        }
-
-        .slides img {
-            width: 10vh;
-        }
-
-        .currentslide {
-            min-width: 15vh;
-            width: 15vh;
-        }
-
-        .currentslide img {
-            max-width: 15vh;
-            width: 15vh;
-            animation: current-img 0.3s ease-in-out;
-        }
-
-        @keyframes current-img {
-            from {
-                width: 10vw;
-            }
-
-            to {
-                width: 15vh;
-            }
-
-            ;
-        }
-        }
-    </style>
 </head>
 
 <body>
     <nav>
-        <ul class="svg-group" style="display: block; width: 100%; height: 100%;">
+        <ul class="svg-group">
             <li><a href="#portfolio" class="portfolio">
                     <svg viewBox="0 0 10 10" preserveAspectRatio="none">
                         <circle cx="5" cy="5" r="5"></circle>
@@ -659,32 +48,29 @@
         </ul>
     </nav>
 
-    <section id="home">
-        <div class="container"
-            style="height: 100vh; background-color: rgba(255, 255, 255, 0); position: relative; z-index: 2;">
+    <section id="home" style="z-index: 2;">
+        <div class="container">
             <div class="home-svg" style="width: 100%; position: absolute">
-                <svg height="650" width="" style="position: absolute; z-index: -2; overflow:hidden;" class="tri-top">
+                <svg height="650" width="" style="z-index: -2;" class="tri-top">
                     <polygon points="0,0 0,650 330,0" style="fill:rgb(255, 0, 0);" />
                 </svg>
-                <svg height="100vh" width="" style="position: absolute; z-index: -1; overflow:hidden;"
-                    class="tri-bot">
+                <svg height="100vh" width="" style="z-index: -1;" class="tri-bot">
                     <polygon points="0,1500 0,190 330,1500" style="fill: rgb(255, 255, 0);" />
                 </svg>
             </div>
-            <div class="home-left" style="float: left; text-align: left; width:50%; padding: 5vh 5vw;">
-                <div class="hometext" style="width:100%; height: 100vh; display:table-cell; vertical-align: middle;">
+            <div class="home-left">
+                <div class="hometext">
                     <h2 style="font-size: 4vw;">Welcome to my Portfolio</h2>
                     <h3 style="display:inline; font-size: 4vw;">I am </h3>
                     <h1 style="display:inline; color: #ff9900; font-size: 6vw;">Ong Shi Ya</h1>
                 </div>
             </div>
-            <div class="home-right" style="float: right; width:50%; padding: 5vh 3vw;">
-                <div class="card"
-                    style="float: right; padding: 20px 0; width: 85%; min-width: 100px; height: 85%; background-color: #f5f6fa; border-radius: 60px; box-shadow: 1px 5px 8px 2px rgba(0, 0, 0, 0.11);">
-                    <div class="homeimg" style="width: 100%; text-align: center;">
+            <div class="home-right">
+                <div class="card">
+                    <div class="homeimg">
                         <img src="images/AvatarwCircle.png" style="width: 60%;">
                     </div>
-                    <div class="socialmediabtns" style="width: 100%; text-align: center;">
+                    <div class="socialmediabtns">
                         <div class="socialmediabtn socialmediabtn1">
                             <a href="https://github.com/osshiya" class="wave-btn"><i
                                     class="fa-brands fa-github"></i></a>
@@ -701,7 +87,7 @@
                             <a href="mailto: osshiya@gmail.com" class="wave-btn"><i class="fa-solid fa-at"></i></a>
                         </div>
                     </div>
-                    <div class="portfoliobtns" style="width: 100%; padding: 30px 0; text-align: center;">
+                    <div class="portfoliobtns">
                         <h6>Past Portfolios</h5>
                             <div class="portfoliobtn portfoliobtn1">
                                 <a href="https://osshiya.wixsite.com/portfolio" class="xxwave-btn"><span>2020</span></a>
@@ -717,15 +103,14 @@
         </div>
     </section>
 
-    <section id="info">
-        <div class="container"
-            style="display: block; min-height: 100vh; background-color: rgb(70, 102, 146); position: relative; z-index: 3;">
-            <div class="more-info" style="padding: 10vh 0; width: 100%; text-align: center; line-height: 30px;">
+    <section id="info" style="z-index: 3;">
+        <div class="container">
+            <div class="more-info">
                 <p>I am a Immersive Media Student from Ngee Ann Polytechnic.</p>
                 <p>I aspires to be a Full Stack Developer.</p>
                 <p>Here are my experiences.</p>
             </div>
-            <div class="container infos" style="flex-direction: column; flex-wrap: nowrap;">
+            <div class="container infos">
                 <h2 style="display: inline-block; width: 100%; text-align: center; margin-bottom: calc(80px + 1vh);">
                     HISTORY</h2>
                 <ul class="timeline">
@@ -742,13 +127,12 @@
         </div>
     </section>
 
-    <section id="skill">
-        <div class="container"
-            style="height: 100vh; background-color: rgb(255, 127, 127); position: relative; z-index: 3; flex-direction: column;">
-            <div class="more-info" style="padding: 10vh 0; width: 100%; text-align: center; line-height: 30px;">
+    <section id="skill" style="z-index: 3;">
+        <div class="container">
+            <div class="more-info">
                 <h2>SKILLS</h2>
             </div>
-            <div class="skills" style="width: 100%; height: 100vh;">
+            <div class="skills">
                 <div class="skills-l" style="width: 70%;">
                     <svg height="18vh" width="100%" viewBox="0 0 800 100">
                         <polygon points="0,25 500,10 503,60 0,75"
@@ -778,10 +162,9 @@
         </div>
     </section>
 
-    <section id="portfolio">
-        <div class="container"
-            style="height: 100vh; background-color: rgb(255, 195, 127); position: relative; z-index: 3; flex-direction: column;">
-            <div class="more-info" style="padding: 10vh 0; width: 100%; text-align: center; line-height: 30px;">
+    <section id="portfolio" style="z-index: 3;">
+        <div class="container">
+            <div class="more-info">
                 <h2>PORTFOLIO</h2>
             </div>
             <div id="carousel">
@@ -789,10 +172,12 @@
                     style="width: 100%; height: 100%; display:flex; flex-direction: row; position: absolute; overflow: hidden;">
                     <div class="displaystxt-1" style="width: 28%; height: 100%;"></div>
                     <div class="displaystxt-2" style="width: 72%; height: 100%; padding: 2vh 1vw 2vh 0;">
-                        <span id="displaystitle" style="display: block; text-align: left; color: #ffffff; font-size: calc(18px + 0.8vw);">Internship</span>
+                        <span id="displaystitle"
+                            style="display: block; text-align: left; color: #ffffff; font-size: calc(18px + 0.8vw);">Internship</span>
                         <span id="displaysdesc"
-                            style="display: inline-block; text-align: left; color: #ffffff; font-size: calc(9px + 0.8vw)">Internship at AIDC
-                                Technology(s) Pte. Ltd.</span>
+                            style="display: inline-block; text-align: left; color: #ffffff; font-size: calc(9px + 0.8vw)">Internship
+                            at AIDC
+                            Technology(s) Pte. Ltd.</span>
                         <div style="z-index: 10; padding: 6px 0;">
                             <a id="displayslink" href="#" onMouseOver="this.style.backgroundColor='#ffffff43'"
                                 onmouseout=" this.style.backgroundColor='transparent'"
@@ -865,51 +250,8 @@
         });
     };
 
-    //carousel
-    // const carousel = document.querySelector('#carousel');
-    // const slider = document.querySelector('#slider');
-
-    // const next = document.querySelector('.next');
-    // const prev = document.querySelector('.prev');
-    // let direction;
-
-    // next.addEventListener('click', function() {
-    //   direction = 1;
-    //   carousel.style.justifyContent = 'flex-start';
-    //   slider.style.transform = 'translate(-20%)';  
-    // });
-
-    // prev.addEventListener('click', function() {
-    //   if (direction === 1) {
-    //     direction = -1;
-    //     slider.appendChild(slider.firstElementChild);
-    //   }
-    //   carousel.style.justifyContent = 'flex-end';    
-    //   slider.style.transform = 'translate(20%)';  
-
-    // });
-
-    // slider.addEventListener('transitionend', function() {
-    //   // get the last element and append it to the front
-
-    //   if (direction === -1) {
-    //     slider.prepend(slider.lastElementChild);
-    //     console.log('preee');
-    //   } else if(direction === 1) {
-    //     slider.appendChild(slider.firstElementChild);
-    //     slider.appendChild(slider.nth-child(2));
-    //     console.log('nexttt');
-    //   }
-
-    //   slider.style.transition = 'none';
-    //   slider.style.transform = 'translate(0)';
-    //   setTimeout(() => {
-    //     slider.style.transition = 'all 0.5s';
-    //   })
-    // }, false);
     var slideIndex = 1;
     var slides = document.getElementsByClassName("slides");
-    // showSlides(slideIndex);
 
     // Next/previous controls
     function plusSlides(n) {
@@ -923,6 +265,7 @@
         $("#displaysdesc").text(getDesc);
         document.getElementById("displayslink").setAttribute("href", getLink);
     }
+    
     function minusSlides(n) {
         showSlides(slideIndex += n);
         slider.prepend(slider.lastElementChild);
@@ -934,6 +277,7 @@
         $("#displaysdesc").text(getDesc);
         document.getElementById("displayslink").setAttribute("href", getLink);
     }
+
     // Thumbnail image controls
     function currentSlide(n) {
         showSlides(slideIndex = n);
@@ -961,9 +305,6 @@
         //   slides[slideIndex-1].style.display = "block";
         console.log(slideIndex)
     }
-
-
-
 
     //animation
     // ScrollReveal().reveal('.intro', { delay: 0});
