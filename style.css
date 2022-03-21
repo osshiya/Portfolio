@@ -157,6 +157,7 @@ section {
 .home-right {
   float: right;
   width: 50%;
+  margin: auto 0;
   padding: 5vh 3vw;
 }
 
@@ -257,8 +258,7 @@ h3 {
 .card {
   float: right;
   padding: 20px 0;
-  width: 85%;
-  min-width: 100px;
+  width: 75%;
   height: 85%;
   background-color: #f5f6fa;
   border-radius: 60px;
@@ -634,8 +634,22 @@ transition: all 1s;
 }
 
 @media only screen and (max-width: 768px) {
+.card{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+  .socialmediabtns {
+    width: 100%;
+    text-align: center;
+  }
+
   .socialmediabtn {
-    width: 2px;
+    justify-content: center;
+    width: calc(100% / 4 - 450px);
+    display: inline-block;
+    padding: 28px;
   }
 
   .displaystxt-1 {
