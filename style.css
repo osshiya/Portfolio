@@ -369,7 +369,7 @@ transition: all 1s;
 }
 
 .socialmediabtn2 .wave-btn:before {
-  background-image: radial-gradient(#38accf, #61ffdd);
+  background-image: radial-gradient(#38accf, #aeffed);
   content: "";
   position: absolute;
   width: 80px;
@@ -386,7 +386,7 @@ transition: all 1s;
 }
 
 .socialmediabtn3 .wave-btn:before {
-  background-image: radial-gradient(#0270ad, #ff2d2d);
+  background-image: radial-gradient(#4591b9, #2b008f);
   content: "";
   position: absolute;
   width: 80px;
@@ -403,7 +403,7 @@ transition: all 1s;
 }
 
 .socialmediabtn4 .wave-btn:before {
-  background-image: radial-gradient(#ff0000, #dfff2d);
+  background-image: radial-gradient(#0270ad, #ff2d2d);
   content: "";
   position: absolute;
   width: 80px;
@@ -415,6 +415,23 @@ transition: all 1s;
   left: 50%;
   transform: translate(-50%);
   animation: wave 4.2s infinite linear;
+  transition: all 1s;
+  overflow: hidden;
+}
+
+.socialmediabtn5 .wave-btn:before {
+  background-image: radial-gradient(#ff0000, #dfff2d);
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 100px;
+  border-radius: 130px;
+  /* background-color: #0097e6; */
+  /* background-image: radial-gradient(#00bcd4, #0097e6); */
+  top: 20px;
+  left: 50%;
+  transform: translate(-50%);
+  animation: wave 4.6s infinite linear;
   transition: all 1s;
   overflow: hidden;
 }
